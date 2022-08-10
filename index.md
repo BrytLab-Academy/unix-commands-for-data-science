@@ -8,11 +8,9 @@ Unix for Data Science
 
 
 
-
-
 #Unix Commands for Data Science.
 
-##1. Why Unix
+## 1. Why Unix
 Unix is the core of most OS except the Windows OS. MacOD, linux, BSD and android are among the popular OS supported by the unix kernel.
 Most of the servers used by big tech giants like Google, meta(facebook) and IBM run on unix OS. 
 The introduction of the linux terminal in the Windows OS confirms how relevant the unix terminal is for developers.
@@ -26,7 +24,7 @@ The three main component of a Unix shell is the STDIN, STDOUT and STDERR. These 
 
 
 
-##2. Basic Unix Commands
+## 2. Basic Unix Commands
 - ls
 - mkdir
 - cd 
@@ -40,7 +38,7 @@ The three main component of a Unix shell is the STDIN, STDOUT and STDERR. These 
 
 
 
-##3. Input Streams & Redirecting IO
+## 3. Input Streams & Redirecting IO
 STDIN(F0): Standard Input. This is the input for the shell as a command. 
 STDOUT(F1): Standard Output. This is the output of a shell command when the command is successfully exceuted.
 STDERR(F2): Standard Error. This is the output of a command when it fails.
@@ -76,21 +74,63 @@ This implies the output of this command will not be displayed on the terminal bu
 `cat stderr.txt`: View the content of STDERR(stderr.txt) (with screenshot)
 
 
-##4. Pipes and Filters
-- pipe
-- grep
-- more
-- less
-- sort
-- uniq
+## 4. Pipe and Filters
+### Pipe
+Pipe is a way of redirecting the output of one command as an input of another command. Command are piped with the "|"
+symbol.
+
+Syntax
+```
+command 1 | command 2 
+```
+
+Example
+We can count the number of word within a text file by piping the output of the `tail` command into the `wc` command.
+
+```
+tail -n 10 text-file.txt  | wc -w
+```
 
 
+### Filters
+Filters commands are used to extract relevant data from it's input. 
+Common examples are:
+- grep: Filter out content form its input by matching them with a regular expression
+Syntax
+```
+grep  regexp
+```
+Example
+```commandline
+grep ama textfile.txt  
+```
+
+- uniq: Report or remove duplicate from its input
+Syntax
+```commandline
+uniq  textfile.txt
+```
+Example
+```commandline
+uniq 
+```
+
+- `sort` : Sort lines of text files
+Syntax
+```commandline
+sort textfile
+```
+Example
+```commandline
+sort textfile.txt
+```
 
 
+## 5. Useful Commands for Data Science
+Unix has several utility programs which can be used to perform data processing and exploratory analysis on text files.
+We can use the pipe and filter command to create a composite command that suits our need.
 
-##5. Useful Commands for Data Science
-Sort, clean, cut and explore text data.
-Use pipes and filters for quick data exploration in Unix
+
 
 Working with text files:
 - cat
